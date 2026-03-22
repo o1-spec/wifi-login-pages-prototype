@@ -35,7 +35,7 @@ class Status extends Component {
   };
 
   render() {
-    const { username, activeSessions, loggedOut, userPlan, dataUsed } = this.state;
+    const { username, activeSessions, loggedOut, userPlan, dataUsed, isUpgrading, upgradeMessage } = this.state;
 
     if (loggedOut) return <div className="logged-out">Successfully logged out</div>;
 
@@ -50,9 +50,20 @@ class Status extends Component {
           <p><strong>Data Used:</strong> {formatBytes(dataUsed)}</p>
         </div>
 
+        {upgradeMessage && (
+          <div className="badge-success" style={{ marginBottom: '20px', padding: '10px' }}>
+            {upgradeMessage}
+          </div>
+        )}
+
         <div className="actions">
           <button onClick={() => this.authManager.logout()}>Logout</button>
-          <button onClick={() => this.paymentManager.upgradePlan()}>Upgrade Plan</button>
+          <button 
+            onClick={() => this.paymentManager.upgradePlan()}
+            disabled={isUpgrading}
+          >
+            {isUpgrading ? 'Upgrading...' : 'Upgrade Plan'}
+          </button>
         </div>
       </div>
     );
