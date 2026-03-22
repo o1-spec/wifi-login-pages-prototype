@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
 import './App.css';
 
 import StatusComparison from './demos/StatusComparison';
@@ -14,10 +14,10 @@ function App() {
         <nav className="demo-nav">
           <h1>OpenWISP WiFi Login Pages - GSoC Prototype</h1>
           <div className="nav-links">
-            <Link to="/status-comparison">Status Component Refactoring</Link>
-            <Link to="/portal-api">Captive Portal API</Link>
-            <Link to="/react-migration">React 19 Migration</Link>
-            <Link to="/ui-improvements">UI Improvements</Link>
+            <NavLink to="/status-comparison">Status Component Refactoring</NavLink>
+            <NavLink to="/portal-api">Captive Portal API</NavLink>
+            <NavLink to="/react-migration">React 19 Migration</NavLink>
+            <NavLink to="/ui-improvements">UI Improvements</NavLink>
           </div>
         </nav>
 

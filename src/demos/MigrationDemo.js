@@ -13,50 +13,21 @@ function MigrationDemo() {
         features.
       </p>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "20px",
-          marginTop: "30px",
-        }}
-      >
+      <div className="demo-grid">
         <LegacyClassComponent />
         <ModernFunctionalComponent />
       </div>
 
-      <div
-        className="explanation"
-        style={{
-          marginTop: "30px",
-          background: "#f8f9fa",
-          padding: "20px",
-          borderRadius: "8px",
-        }}
-      >
+      <div className="explanation">
         <h3>Testing Framework Migration (Enzyme ➔ RTL)</h3>
         <p>
           As part of the React 19 upgrade, testing will shift to React Testing
           Library (RTL). Here is the visual difference in code structure:
         </p>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "20px",
-            fontSize: "0.9em",
-          }}
-        >
-          <div
-            style={{
-              background: "#2c3e50",
-              color: "#ecf0f1",
-              padding: "15px",
-              borderRadius: "4px",
-            }}
-          >
-            <strong>Legacy Enzyme (Deprecated)</strong>
+        <div className="demo-grid">
+          <div className="code-sample">
+            <span className="status-indicator legacy">Legacy Enzyme (Deprecated)</span>
             <pre>
               {`const wrapper = shallow(<Component />);
 wrapper.setState({ loading: true });
@@ -64,15 +35,8 @@ expect(wrapper.find('.spinner').length).toBe(1);
 // Tests implementation details (state)`}
             </pre>
           </div>
-          <div
-            style={{
-              background: "#2c3e50",
-              color: "#ecf0f1",
-              padding: "15px",
-              borderRadius: "4px",
-            }}
-          >
-            <strong>React Testing Library (Modern)</strong>
+          <div className="code-sample">
+            <span className="status-indicator modern">React Testing Library (Modern)</span>
             <pre>
               {`render(<Component />);
 expect(screen.getByText('Loading...')).toBeInTheDocument();

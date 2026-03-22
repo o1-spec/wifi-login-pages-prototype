@@ -14,27 +14,25 @@ function PortalAPIDemo() {
         for older unsupported browsers.
       </p>
 
-      <div className="controls" style={{ background: '#f8f9fa', padding: '20px', borderRadius: '8px' }}>
+      <div className="controls-panel">
         <h3>Configuration (Simulating YAML Settings)</h3>
         
-        <div style={{ marginBottom: '15px' }}>
-          <label style={{ marginRight: '10px' }}><strong>Configurable Timeout (ms):</strong></label>
+        <div className="control-group">
+          <label>Configurable Timeout (ms):</label>
           <input 
             type="number" 
             value={timeout} 
             onChange={(e) => setTimeoutVal(Number(e.target.value))}
             step="500"
             min="500"
-            style={{ padding: '5px' }}
           />
         </div>
 
-        <div>
-          <label style={{ marginRight: '10px' }}><strong>Simulate Network State:</strong></label>
+        <div className="control-group">
+          <label>Simulate Network State:</label>
           <select 
             value={simulateState}
             onChange={(e) => setSimulateState(e.target.value)}
-            style={{ padding: '5px' }}
           >
             <option value="captive">Captive Portal is present (Requires Login)</option>
             <option value="internet">Direct Internet Mode (No Login)</option>
@@ -48,7 +46,7 @@ function PortalAPIDemo() {
         simulateState={simulateState} 
       />
 
-      <div className="explanation" style={{ marginTop: '30px', borderTop: '1px solid #eee', paddingTop: '20px' }}>
+      <div className="explanation">
         <h3>Why this approach?</h3>
         <ul>
           <li><strong>Organization Configurable:</strong> Timeout can be adjusted per organization.</li>
