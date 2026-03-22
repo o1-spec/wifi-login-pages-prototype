@@ -45,12 +45,18 @@ The existing architecture maintains duplicate DOM trees for mobile and desktop v
 <img src="./public/gifs/ui-responsive-header.gif" alt="Responsive Header & UI Improvements" />
 <img src="./public/screenshots/ui-improvements.png" alt="Unified Viewport Strategy" />
 
-### 4. Automated Testing Migration (Enzyme ➔ RTL)
+### 4. Automated Testing Migration (Enzyme ➔ RTL) & React 19
 Enzyme is officially deprecated. Upgrading to React 19 inherently forces a testing overhaul. Because the proposed architecture decouples logic into pure Utility Functions and isolated Managers, comprehensive testing becomes significantly easier.
 
-*This repository includes 100% passing tests for the newly created Utility and Manager logic, simulating how RTL combined with Jest will be utilized.*
+The prototype proves that transitioning from React 17 Classes to React 19 Functional Hooks maintains **backward compatibility for the user** while vastly improving the developer experience beneath the surface (handling async state transparently). 
 
-<img src="./public/screenshots/automated-tests-passing.png" alt="Passing Test Suites" />
+**React 19 Hooks Async Execution Demo:**
+
+<img src="./public/gifs/react19-migration.gif" alt="React 19 Hooks Demo" />
+
+*Furthermore, this repository includes 100% passing tests for the newly created Utility and Manager logic, simulating how React Testing Library (RTL) combined with Jest will test actual user behavior rather than just component implementation details.*
+
+<img src="./public/screenshots/react-testing-library-results.png" alt="Passing Test Suites" />
 
 ---
 
